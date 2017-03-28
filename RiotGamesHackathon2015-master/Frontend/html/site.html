@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Suggested Champions</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="background"></div>
+	<div class="head">
+		<div class="app-title"><span>L</span>eague <span>C</span>hampion <span>S</span>uggestions</div>
+
+		<div class="menu-bar">
+			<a href="#" onclick="homePage()" class="option">HOME</a>
+			<a href="#" onclick="aboutPage()" class="option">ABOUT</a>
+		</div>
+	</div>
+
+	<div id="home-page">
+
+		<div class="internal-body">
+			
+			<div class="general-title">
+				<h1>
+					Welcome to league champion suggestions!
+				</h1>
+				<span>
+					Input your summoner name to see recommended champions to try for each role.
+				</span>
+			</div>
+
+			<div class="form-div">
+				<div class="input-holder">
+					<input id="summoner-input" type="text" placeholder="Summoner Name">
+				</div>
+				<button class="custom-btn" onclick="getSuggestions()">GO</button>
+				<div class="emptySum-text">Write your summoner name first!</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="suggestion-page">
+		<div class="internal-body container">
+
+			<div class="general-title">
+				<h1>
+					Recommended Champions
+				</h1>
+				<span>
+					Based on the champions you already play, we recommend trying the following champions.
+				</span>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6 col-sm-2 col-sm-offset-1">
+					<div class="suggested-champ">
+						<div class="role">top</div>
+						<div class="top-champ">
+							<div class="img-placeholder">
+								<div class="img"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">jungle</div>
+						<div class="jgl-champ">
+							<div class="img-placeholder">
+								<div class="img"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">mid</div>
+						<div class="mid-champ">
+							<div class="img-placeholder">
+								<div class="img"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">adc</div>
+						<div class="adc-champ">
+							<div class="img-placeholder">
+								<div class="img"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2 col-xs-offset-3 col-sm-offset-0">
+					<div class="suggested-champ">
+						<div class="role">support</div>
+						<div class="sup-champ">
+							<div class="img-placeholder">
+								<div class="img"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6 col-sm-2 col-sm-offset-1">
+					<div class="suggested-champ">
+						<div class="role visible-xs">top</div>
+						<div class="top-champ2">
+							<div class="img-placeholder tier2">
+								<div class="img tier2"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">jungle</div>
+						<div class="jgl-champ2">
+							<div class="img-placeholder tier2">
+								<div class="img tier2"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">mid</div>
+						<div class="mid-champ2">
+							<div class="img-placeholder tier2">
+								<div class="img tier2"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">adc</div>
+						<div class="adc-champ2">
+							<div class="img-placeholder tier2">
+								<div class="img tier2"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2 col-xs-offset-3 col-sm-offset-0">
+					<div class="suggested-champ">
+						<div class="role visible-xs">support</div>
+						<div class="sup-champ2">
+							<div class="img-placeholder tier2">
+								<div class="img tier2"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6 col-sm-2 col-sm-offset-1">
+					<div class="suggested-champ">
+						<div class="role visible-xs">top</div>
+						<div class="top-champ3">
+							<div class="img-placeholder tier3">
+								<div class="img tier3"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">jungle</div>
+						<div class="jgl-champ3">
+							<div class="img-placeholder tier3">
+								<div class="img tier3"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">mid</div>
+						<div class="mid-champ3">
+							<div class="img-placeholder tier3">
+								<div class="img tier3"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role visible-xs">adc</div>
+						<div class="adc-champ3">
+							<div class="img-placeholder tier3">
+								<div class="img tier3"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2 col-xs-offset-3 col-sm-offset-0">
+					<div class="suggested-champ">
+						<div class="role visible-xs">support</div>
+						<div class="sup-champ3">
+							<div class="img-placeholder tier3">
+								<div class="img tier3"></div>
+							</div>
+							<div class="name"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="about-page">
+		<div class="internal-body container">
+
+			<div class="general-title">
+				<h1>
+					Team Boolean Composition
+				</h1>
+				<span>
+					The ones that made this app possible.
+				</span>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-6 col-sm-2 col-sm-offset-1">
+					<div class="suggested-champ">
+						<div class="role">top</div>
+						<div>
+							<div class="img-placeholder">
+								<div class="img" style="background-image: url('../images/top.png')"></div>
+							</div>
+							<div class="name">VladLord Snow</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">jungle</div>
+						<div>
+							<div class="img-placeholder">
+								<div class="img" style="background-image: url('../images/jun.png')"></div>
+							</div>
+							<div class="name">RndmInternetMan</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">mid</div>
+						<div>
+							<div class="img-placeholder">
+								<div class="img" style="background-image: url('../images/mid.png')"></div>
+							</div>
+							<div class="name">Platicopter</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2">
+					<div class="suggested-champ">
+						<div class="role">adc</div>
+						<div>
+							<div class="img-placeholder">
+								<div class="img" style="background-image: url('../images/adc.png')"></div>
+							</div>
+							<div class="name">Juandx1</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-2 col-xs-offset-3 col-sm-offset-0">
+					<div class="suggested-champ">
+						<div class="role">support</div>
+						<div>
+							<div class="img-placeholder">
+								<div class="img" style="background-image: url('../images/sup.jpg')"></div>
+							</div>
+							<div class="name">Riot Adobo</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="general-title gt2">
+				<h1>
+					What the app does
+				</h1>
+			</div>
+
+			<div class="row r2">
+				<div class="col-sm-4 paragr">
+					League Champion Suggestions is an application that uses the champion mastery API to suggest champions that you might enjoy playing.
+				</div>
+				<div class="col-sm-4 paragr">
+					The application looks at the champions you have a high level of mastery on and finds champions that other North American summoners frequently master alongside those champions to use.
+				</div>
+				<div class="col-sm-4 paragr">
+					Looking at data from over 3000 North American summoners, we construct a table with the probabilities that a summoner who masters each champion also masters each other champion. Combining these probabilities lets us find the champions most recommended for you!
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="error-page">
+		<div class="general-title">
+			<h1>
+				Ups!
+			</h1>
+			<span>
+				We couldn't find your summoner name.
+			</span>
+		</div>
+		<a class="error-link" href="#" onclick="homePage()">TRY AGAIN</a>
+	</div>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#error-page').hide();
+		$('#suggestion-page').hide();
+		$('#about-page').hide();
+		homePage();
+	});
+
+	function homePage(){
+		$('.emptySum-text').hide();
+		$('#summoner-input').val("");
+		$('#suggestion-page').fadeOut(1000);
+		$('#error-page').fadeOut(1000);
+		$('#about-page').fadeOut(1000);
+		$('#home-page').removeClass('animated fadeOutUp').delay(1500).fadeIn(1000);
+	}
+
+	function aboutPage(){
+		$('#suggestion-page').fadeOut(1000);
+		$('#error-page').fadeOut(1000);
+		$('#home-page').fadeOut(1000);
+		$('#about-page').delay(1500).fadeIn(1000);
+	}
+
+	function getSuggestions(){
+
+		if ($('#summoner-input').val() == ""){
+			$('.emptySum-text').show();
+		}else{
+
+			$.ajax({
+				url: '/suggestions',
+				type: 'POST',
+				dataType: 'text',
+				data: {summonerName: $('#summoner-input').val().replace(/\s/g,'')}
+			})
+			.done(function(json) {
+				console.log("success");
+
+				var jsonVal = JSON.parse(json)
+				var topInfo = jsonVal.top;
+				var jgInfo = jsonVal.jungle;
+				var midInfo = jsonVal.mid;
+				var adcInfo = jsonVal.adc;
+				var supInfo = jsonVal.support;
+
+				$('.top-champ .img-placeholder .img').attr('style', 'background-image: url("'+topInfo[0].url+'")');
+				$('.top-champ .name').text(topInfo[0].displayName);
+
+				$('.jgl-champ .img-placeholder .img').attr('style', 'background-image: url("'+jgInfo[0].url+'")');
+				$('.jgl-champ .name').text(jgInfo[0].displayName);
+
+				$('.mid-champ .img-placeholder .img').attr('style', 'background-image: url("'+midInfo[0].url+'")');
+				$('.mid-champ .name').text(midInfo[0].displayName);
+
+				$('.adc-champ .img-placeholder .img').attr('style', 'background-image: url("'+adcInfo[0].url+'")');
+				$('.adc-champ .name').text(adcInfo[0].displayName);
+
+				$('.sup-champ .img-placeholder .img').attr('style', 'background-image: url("'+supInfo[0].url+'")');
+				$('.sup-champ .name').text(supInfo[0].displayName);
+
+				$('.top-champ2 .img-placeholder .img').attr('style', 'background-image: url("'+topInfo[1].url+'")');
+				$('.top-champ2 .name').text(topInfo[1].displayName);
+
+				$('.jgl-champ2 .img-placeholder .img').attr('style', 'background-image: url("'+jgInfo[1].url+'")');
+				$('.jgl-champ2 .name').text(jgInfo[1].displayName);
+
+				$('.mid-champ2 .img-placeholder .img').attr('style', 'background-image: url("'+midInfo[1].url+'")');
+				$('.mid-champ2 .name').text(midInfo[1].displayName);
+
+				$('.adc-champ2 .img-placeholder .img').attr('style', 'background-image: url("'+adcInfo[1].url+'")');
+				$('.adc-champ2 .name').text(adcInfo[1].displayName);
+
+				$('.sup-champ2 .img-placeholder .img').attr('style', 'background-image: url("'+supInfo[1].url+'")');
+				$('.sup-champ2 .name').text(supInfo[1].displayName);
+
+				$('.top-champ3 .img-placeholder .img').attr('style', 'background-image: url("'+topInfo[2].url+'")');
+				$('.top-champ3 .name').text(topInfo[2].displayName);
+
+				$('.jgl-champ3 .img-placeholder .img').attr('style', 'background-image: url("'+jgInfo[2].url+'")');
+				$('.jgl-champ3 .name').text(jgInfo[2].displayName);
+
+				$('.mid-champ3 .img-placeholder .img').attr('style', 'background-image: url("'+midInfo[2].url+'")');
+				$('.mid-champ3 .name').text(midInfo[2].displayName);
+
+				$('.adc-champ3 .img-placeholder .img').attr('style', 'background-image: url("'+adcInfo[2].url+'")');
+				$('.adc-champ3 .name').text(adcInfo[2].displayName);
+
+				$('.sup-champ3 .img-placeholder .img').attr('style', 'background-image: url("'+supInfo[2].url+'")');
+				$('.sup-champ3 .name').text(supInfo[2].displayName);
+
+				$('#home-page').removeClass('animated fadeInDown').addClass('animated fadeOutUp').show(0).delay(1500).hide(0);
+				$('#suggestion-page').delay(1500).fadeIn(1000);
+
+				if($( window ).width() <= 768){
+					$('.top-champ').addClass('animated slideInLeft');
+					$('.jgl-champ').addClass('animated slideInRight');
+					$('.mid-champ').addClass('animated slideInLeft');
+					$('.adc-champ').addClass('animated slideInRight');
+					$('.sup-champ').addClass('animated slideInUp');
+					$('.top-champ2').addClass('animated slideInLeft');
+					$('.jgl-champ2').addClass('animated slideInRight');
+					$('.mid-champ2').addClass('animated slideInLeft');
+					$('.adc-champ2').addClass('animated slideInRight');
+					$('.sup-champ2').addClass('animated slideInUp');
+					$('.top-champ3').addClass('animated slideInLeft');
+					$('.jgl-champ3').addClass('animated slideInRight');
+					$('.mid-champ3').addClass('animated slideInLeft');
+					$('.adc-champ3').addClass('animated slideInRight');
+					$('.sup-champ3').addClass('animated slideInUp');
+				}else{
+					$('.top-champ').addClass('animated slideInUp');
+					$('.jgl-champ').addClass('animated slideInDown');
+					$('.mid-champ').addClass('animated slideInUp');
+					$('.adc-champ').addClass('animated slideInDown');
+					$('.sup-champ').addClass('animated slideInUp');
+					$('.top-champ2').addClass('animated slideInUp');
+					$('.jgl-champ2').addClass('animated slideInDown');
+					$('.mid-champ2').addClass('animated slideInUp');
+					$('.adc-champ2').addClass('animated slideInDown');
+					$('.sup-champ2').addClass('animated slideInUp');
+					$('.top-champ3').addClass('animated slideInUp');
+					$('.jgl-champ3').addClass('animated slideInDown');
+					$('.mid-champ3').addClass('animated slideInUp');
+					$('.adc-champ3').addClass('animated slideInDown');
+					$('.sup-champ3').addClass('animated slideInUp');
+				}
+			})
+.fail(function() {
+	$('#home-page').removeClass('animated fadeInDown').addClass('animated fadeOutUp').show(0).delay(1500).hide(0);
+	$('#error-page').delay(1500).fadeIn(1000);
+});
+}
+}
+
+</script>
+
+</body>
+</html>
